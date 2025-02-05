@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import darkMapBg from './assets/darkmapbg.jpeg'; // Import the image
+import profileIcon from './profileIcon.png';
 import { motion } from 'framer-motion'; // Import motion for the animation
 
 const MissionPathAnimation = () => {
   return (
     <div className="absolute inset-0 h-[500px] pointer-events-none z-10">
       <svg
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px]"
+        className="absolute top-8/30 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px]"
         viewBox="0 0 300 150"
       >
         {/* Animated Path */}
@@ -51,16 +52,63 @@ const LandingPage = () => {
       {!isLightMode && (
         <>
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-30 z-0"
-            style={{ backgroundImage: `url(${darkMapBg})` }} // Use the imported image
+            className="absolute inset-0 bg-cover bg-center z-0"
+            style={{
+              backgroundImage: `url(${darkMapBg}), linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 10%)`,
+            }}
           ></div>
+
           <MissionPathAnimation /> {/* Add the animation here */}
         </>
       )}
 
+      {/* Navbar */}
+      <div className="absolute top-2 left-120 right-0 flex items-center p-4 z-30 text-xl">
+        {/* Navigation Links on the Left */}
+        <div className="flex space-x-10">
+          <button
+            className="text-white font-medium"
+            onClick={() => navigate("/how-it-works")}
+          >
+            How it Works
+          </button>
+          <button
+            className="text-white font-medium"
+            onClick={() => navigate("/file-a-report")}
+          >
+            File a Report
+          </button>
+          <button
+            className="text-white font-medium"
+            onClick={() => navigate("/about-us")}
+          >
+            About Us
+          </button>
+        </div>
+
+        {/* Empty space to push the toggle button to the center */}
+        <div className="flex-grow"></div>
+
+        {/* Toggle Button in the Center */}
+        <div className="flex items-center">
+          <button
+            className={`relative w-13 h-6 flex items-center right-60 rounded-full p-1 cursor-pointer transition-colors duration-300 ${
+              isLightMode ? "bg-[#D8B4FE]" : "bg-[#7C3AED]"
+            }`}
+            onClick={() => setIsLightMode(!isLightMode)}
+          >
+            <div
+              className={`w-5 h-5 bg-white rounded-full shadow-md transition-transform ${
+                isLightMode ? "translate-x-7" : "translate-x-0"
+              }`}
+            ></div>
+          </button>
+        </div>
+      </div>
+
       {/* Header (WaySecure at the top-left) */}
       <div
-        className={`absolute top-5 left-7 text-2xl font-extrabold transition-all z-30
+        className={`absolute top-5 left-7 text-3xl font-extrabold transition-all z-30
     ${
       isLightMode
         ? "text-black drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]"  // Light Mode: Normal black text
@@ -72,65 +120,20 @@ const LandingPage = () => {
 
       {/* Main Content */}
       <div
-        className={`flex-1 flex flex-col items-center justify-center text-center px-6 ${isLightMode ? "bg-white" : "bg-gradient-to-b from-[#1C1C1C] to-[#0A0A0A]"}`}
+        className={`flex-1 flex flex-col items-center justify-center text-center px-6 ${
+          isLightMode ? "bg-white" : "bg-gradient-to-b from-[#1C1C1C] to-[#0A0A0A]"
+        }`}
       >
-        {/* Header */}
-        <div className="absolute top-5 right-5 flex space-x-4">
-          {/* Toggle Switch */}
-          <button
-            className={`relative w-13 h-6 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
-              isLightMode ? "bg-[#D8B4FE]" : "bg-[#7C3AED]"
-            }`}
-            onClick={() => setIsLightMode(!isLightMode)}
-          >
-            <div
-              className={`w-5 h-5 bg-white rounded-full shadow-md transition-transform ${
-                isLightMode ? "translate-x-7" : "translate-x-0"
-              }`}
-            ></div>
-          </button>
-
-          <button
-            className={`px-3 py-1.1 text-sm rounded-md transition font-medium 
-    ${
-      isLightMode
-        ? "bg-[#D8B4FE] text-black hover:bg-[#C084FC]" // Light Purple in Light Mode
-        : "bg-gradient-to-b from-[#A855F7] to-[#7C3AED] text-white hover:from-[#C084FC] hover:to-[#9333EA]" // Neon Purple + Gradient in Dark Mode
-    }`}
-            onClick={() => navigate("/login")}
-          >
-            Login
-          </button>
-          <button
-            className={`px-3 py-1.1 text-sm rounded-md transition font-medium 
-    ${
-      isLightMode
-        ? "bg-[#D8B4FE] text-black hover:bg-[#C084FC]" // Light Purple in Light Mode
-        : "bg-gradient-to-b from-[#A855F7] to-[#7C3AED] text-white hover:from-[#C084FC] hover:to-[#9333EA]" // Neon Purple + Gradient in Dark Mode
-    }`}
-            onClick={() => navigate("/signup")}
-          >
-            Sign Up
-          </button>
-          <button className="bg-purple-800 p-1 rounded-full hover:bg-purple-900 transition w-10 h-10 flex items-center justify-center">
-            <img
-              src="waysecure\src\download.png"
-              alt="Profile"
-              className="w-full h-full object-cover rounded-full"
-            />
-          </button>
-        </div>
-
         {/* Center Content */}
         <h1
-          className={`text-3xl font-bold transition-all z-20
+          className={`text-5xl font-bold transition-all z-20 text-3xl
   ${isLightMode ? "text-gray-800" : "text-gray-300"}`}
         >
           WaySecure.
         </h1>
 
         <p
-          className={`mt-3 text-lg transition-all z-20
+          className={`mt-3 text-xl transition-all z-20
   ${isLightMode ? "text-gray-700" : "text-gray-400"}`}
         >
           Our mission is to guide your way to security. <br />
@@ -150,7 +153,40 @@ const LandingPage = () => {
           Get Directions
         </button>
       </div>
+      <div className="absolute top-5 right-5 flex space-x-4 z-30">
+        <button
+          className={`px-3 py-1.1 text-sm rounded-md transition font-medium 
+          ${
+            isLightMode
+              ? "bg-[#D8B4FE] text-black hover:bg-[#C084FC]" // Light Purple in Light Mode
+              : "bg-gradient-to-b from-[#A855F7] to-[#7C3AED] text-white hover:from-[#C084FC] hover:to-[#9333EA]" // Neon Purple + Gradient in Dark Mode
+          }`}
+          onClick={() => navigate("/login")}
+        >
+          Login
+        </button>
+        <button
+          className={`px-3 py-1.1 text-sm rounded-md transition font-medium 
+          ${
+            isLightMode
+              ? "bg-[#D8B4FE] text-black hover:bg-[#C084FC]" // Light Purple in Light Mode
+              : "bg-gradient-to-b from-[#A855F7] to-[#7C3AED] text-white hover:from-[#C084FC] hover:to-[#9333EA]" // Neon Purple + Gradient in Dark Mode
+          }`}
+          onClick={() => navigate("/signup")}
+        >
+          Sign Up
+        </button>
+        <button className="bg-purple-800 p-1 rounded-full hover:bg-purple-900 transition w-10 h-10 flex items-center justify-center">
+          {/* <img
+            src="waysecure\src\download.png"
+            alt="Profile"
+            className="w-full h-full object-cover rounded-full"
+          /> */}
+          <img src={profileIcon} alt='profile'/>
+        </button>
+      </div>
     </div>
+    
   );
 };
 
