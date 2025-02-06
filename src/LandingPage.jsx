@@ -81,7 +81,7 @@ const LandingPage = () => {
           </button>
           <button
             className="text-white font-medium"
-            onClick={() => navigate("/about-us")}
+            onClick={() => navigate("/aboutus")}
           >
             About Us
           </button>
