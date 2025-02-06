@@ -38,10 +38,12 @@ const ProfilePage = () => {
 
     <div className={`min-h-screen p-8 transition-colors duration-200 ${darkMode ? 'bg-slate-900 text-gray-100' : 'bg-gray-50 text-gray-900'}`}>
         
+        
       <div className="max-w-2xl mx-auto space-y-6">
         {/* Profile Header */}
         
         <div className="flex justify-between items-center mb-8">
+
           <div className="flex items-center gap-4">
             <div className="relative">
               <div className="w-24 h-24 rounded-full bg-blue-200 flex items-center justify-center overflow-hidden">
@@ -72,6 +74,9 @@ const ProfilePage = () => {
             </label>
           </div>
         </div>
+        
+
+        
 
         {/* Personal Information */}
         <div className={`rounded-lg shadow-sm border ${darkMode ? 'bg-slate-800 border-slate-700' : 'bg-white border-gray-200'}`}>
