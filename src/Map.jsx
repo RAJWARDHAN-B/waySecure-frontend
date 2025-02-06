@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 // Dynamically import Leaflet component to avoid SSR issues
 const Map = () => {
- // const navigate = useNavigate();
+  //const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showRouteDialog, setShowRouteDialog] = useState(false);
   const [startLocation, setStartLocation] = useState('');
@@ -434,13 +434,13 @@ ${darkMode ? "bg-gray-900 text-gray-200" : "bg-white text-gray-900"}`}>
 
 {/* Navigation Menu */}
 <nav className="flex flex-col w-full p-2">
-<button
+
+  <button
       className={`p-3 flex items-center w-full transition-colors duration-200 
         ${darkMode ? "hover:bg-gray-700 text-gray-300" : "hover:bg-gray-200 text-gray-900"}`}
-      onClick={() => useNavigate("/")} // This will navigate to the Home page
-    >
       🏠 {sidebarOpen && <span className="ml-2">Home</span>}
-    </button>
+  </button>
+
   <button className={`p-3 flex items-center w-full transition-colors duration-200 
     ${darkMode ? "hover:bg-gray-700 text-gray-300" : "hover:bg-gray-200 text-gray-900"}`} 
     onClick={() => setShowSavedPopup(true)}>
