@@ -8,7 +8,8 @@ const MissionPathAnimation = () => {
   return (
     <div className="absolute inset-0 h-[500px] pointer-events-none z-10">
       <svg
-        className="absolute top-8/30 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px]"
+      className="absolute top-11/60 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px]"
+
         viewBox="0 0 300 150"
       >
         {/* Animated Path */}
@@ -63,28 +64,29 @@ const LandingPage = () => {
       )}
 
       {/* Navbar */}
-      <div className="absolute top-2 left-120 right-0 flex items-center p-4 z-30 text-xl">
+      <div className="absolute top-2 left-100 right-0 flex items-center p-4 z-30 text-xl">
         {/* Navigation Links on the Left */}
         <div className="flex space-x-10">
-          <button
-            className="text-white font-medium"
-            onClick={() => navigate("/how-it-works")}
-          >
-            How it Works
-          </button>
-          <button
-            className="text-white font-medium"
-            onClick={() => navigate("/file")}
-          >
-            File a Report
-          </button>
-          <button
-            className="text-white font-medium"
-            onClick={() => navigate("/about-us")}
-          >
-            About Us
-          </button>
-        </div>
+  <button
+    className="text-white font-medium hover:underline"
+    onClick={() => navigate("/how-it-works")}
+  >
+    How it Works
+  </button>
+  <button
+    className="text-white font-medium hover:underline"
+    onClick={() => navigate("/file")}
+  >
+    File a Report
+  </button>
+  <button
+    className="text-white font-medium hover:underline"
+    onClick={() => navigate("/aboutus")}
+  >
+    About Us
+  </button>
+</div>
+
 
         {/* Empty space to push the toggle button to the center */}
         <div className="flex-grow"></div>
@@ -112,7 +114,7 @@ const LandingPage = () => {
     ${
       isLightMode
         ? "text-black drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]"  // Light Mode: Normal black text
-        : "text-[#EAEAEA] drop-shadow-[0_0_2px_rgba(255,255,255,0.2)]" // Dark Mode: Glow Effect
+        : "text-[#EAEAEA] drop-shadow-[0_0_2px_rgba(255,255,255,0.09)]" // Dark Mode: Glow Effect
     }`}
       >
         WaySecure
