@@ -67,26 +67,25 @@ const LandingPage = () => {
       <div className="absolute top-2 left-100 right-0 flex items-center p-4 z-30 text-xl">
         {/* Navigation Links on the Left */}
         <div className="flex space-x-10">
-  <button
-    className="text-white font-medium hover:underline"
-    onClick={() => navigate("/how-it-works")}
-  >
-    How it Works
-  </button>
-  <button
-    className="text-white font-medium hover:underline"
-    onClick={() => navigate("/file")}
-  >
-    File a Report
-  </button>
-  <button
-    className="text-white font-medium hover:underline"
-    onClick={() => navigate("/about-us")}
-  >
-    About Us
-  </button>
-</div>
-
+          <button
+            className="text-white font-medium"
+            onClick={() => navigate("/how-it-works")}
+          >
+            How it Works
+          </button>
+          <button
+            className="text-white font-medium"
+            onClick={() => navigate("/file")}
+          >
+            File a Report
+          </button>
+          <button
+            className="text-white font-medium"
+            onClick={() => navigate("/about-us")}
+          >
+            About Us
+          </button>
+        </div>
 
         {/* Empty space to push the toggle button to the center */}
         <div className="flex-grow"></div>

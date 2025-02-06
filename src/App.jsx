@@ -12,6 +12,7 @@ import LoginPage from "./LoginPage"; // Create this page
 import SignUpPage from "./SignUpPage"; // Create this page
 import Map from "./Map";
 import FileReport from "./FileReport";
+import AboutUs from "./AboutUs";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/map" element={<Map/>}/>
         <Route path="/file" element={<FileReport/>}/>
+        <Route path="/aboutus" element={<AboutUs/>}/>
       </Routes>
     </Router>
   );
