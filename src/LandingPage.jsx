@@ -74,7 +74,7 @@ const LandingPage = () => {
           </button>
           <button
             className="text-white font-medium"
-            onClick={() => navigate("/file-a-report")}
+            onClick={() => navigate("/file")}
           >
             File a Report
           </button>
@@ -148,7 +148,7 @@ const LandingPage = () => {
         ? "bg-[#6EE7B7] text-black hover:bg-[#34D399]" // Light Green in Light Mode
         : "bg-gradient-to-b from-[#00FFC6] to-[#008F5F] text-white hover:from-[#66FFA9] hover:to-[#006B4F] shadow-lg shadow-cyan-500/15"
     }`}
-          onClick={() => alert("Fetching directions...")}
+          onClick={() =>navigate("/map")}
         >
           Get Directions
         </button>
