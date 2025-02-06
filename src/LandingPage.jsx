@@ -112,7 +112,7 @@ const LandingPage = () => {
     ${
       isLightMode
         ? "text-black drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]"  // Light Mode: Normal black text
-        : "text-[#EAEAEA] drop-shadow-[0_0_2px_rgba(255,255,255,0.5)]" // Dark Mode: Glow Effect
+        : "text-[#EAEAEA] drop-shadow-[0_0_2px_rgba(255,255,255,0.2)]" // Dark Mode: Glow Effect
     }`}
       >
         WaySecure
@@ -129,7 +129,7 @@ const LandingPage = () => {
           className={`text-5xl font-bold transition-all z-20 text-3xl
   ${isLightMode ? "text-gray-800" : "text-gray-300"}`}
         >
-          WaySecure.
+          WaySecure
         </h1>
 
         <p
