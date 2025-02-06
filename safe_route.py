@@ -5,9 +5,6 @@ from model.ml_model import predict_score
 
 #ml model requires in form lat,lon
 
-start = (-118.2436, 34.0522)
-end = (-118.3215, 34.1330)  
-
 def get_routes(start, end):    
     print('\n\n')
     url = f"https://router.project-osrm.org/route/v1/car/{start[0]},{start[1]};{end[0]},{end[1]}?alternatives=true&overview=full&geometries=geojson"
@@ -79,7 +76,6 @@ def get_alt_routes(start, end):
     except:
         return 0
     
-
 
 
 
