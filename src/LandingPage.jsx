@@ -176,7 +176,9 @@ const LandingPage = () => {
         >
           Sign Up
         </button>
-        <button className="bg-purple-800 p-1 rounded-full hover:bg-purple-900 transition w-10 h-10 flex items-center justify-center">
+        <button 
+         onClick={() => navigate("/profile")}
+        className="bg-purple-800 p-1 rounded-full hover:bg-purple-900 transition w-10 h-10 flex items-center justify-center">
           {/* <img
             src="waysecure\src\download.png"
             alt="Profile"
