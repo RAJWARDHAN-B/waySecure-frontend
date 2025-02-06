@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-//import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // Dynamically import Leaflet component to avoid SSR issues
 const Map = () => {
@@ -434,12 +434,13 @@ ${darkMode ? "bg-gray-900 text-gray-200" : "bg-white text-gray-900"}`}>
 
 {/* Navigation Menu */}
 <nav className="flex flex-col w-full p-2">
-  <button className={`p-3 flex items-center w-full transition-colors duration-200 
-    ${darkMode ? "hover:bg-gray-700 text-gray-300" : "hover:bg-gray-200 text-gray-900"}`}
-   //</nav> onClick={() => navigate("/")}
+<button
+      className={`p-3 flex items-center w-full transition-colors duration-200 
+        ${darkMode ? "hover:bg-gray-700 text-gray-300" : "hover:bg-gray-200 text-gray-900"}`}
+      onClick={() => useNavigate("/")} // This will navigate to the Home page
     >
-    🏠 {sidebarOpen && <span className="ml-2">Home</span>}
-  </button>
+      🏠 {sidebarOpen && <span className="ml-2">Home</span>}
+    </button>
   <button className={`p-3 flex items-center w-full transition-colors duration-200 
     ${darkMode ? "hover:bg-gray-700 text-gray-300" : "hover:bg-gray-200 text-gray-900"}`} 
     onClick={() => setShowSavedPopup(true)}>
