@@ -31,7 +31,7 @@ def avg_safety_score(route):
     for lon, lat in route:
         score = score+predict_score(lat, lon)
     
-    return score
+    return score/len(route)
 
 def safest_route(routes):
     
