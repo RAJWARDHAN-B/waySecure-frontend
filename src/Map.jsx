@@ -3,6 +3,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import RouteForm from './components/RouteForm';
 //import { Navigate } from "react-router-dom";
 
 
@@ -19,11 +20,13 @@ const Map = () => {
   const [routeLayer, setRouteLayer] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
   
+  
   // Popup states
   const [showSavedPopup, setShowSavedPopup] = useState(false);
   const [showRecentPopup, setShowRecentPopup] = useState(false);
   const [showPhonePopup, setShowPhonePopup] = useState(false);
   const [showPolicePopup, setShowPolicePopup] = useState(false);
+
   
   // Demo data
   const [savedAddresses, setSavedAddresses] = useState([
@@ -99,6 +102,8 @@ const Map = () => {
       if (map) map.remove();
     };
   }, []); // Initial map setup
+
+  
 
   // Add a separate useEffect to handle theme changes
   useEffect(() => {
@@ -345,58 +350,20 @@ className={`absolute top-0 left-0 w-full p-2 flex items-center shadow-md z-50 tr
 </div>
 
       {/* Route Planning Dialog */}
+      <div>
+      {/* A button to open the form */}
+      <button
+        onClick={() => setShowRouteDialog(true)}
+        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+      >
+        Plan Your Route
+      </button>
+
+      {/* Conditionally render RouteForm when showRouteDialog is true */}
       {showRouteDialog && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-lg z-50 w-96">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-lg font-semibold">Plan Your Route</h2>
-            <button onClick={() => setShowRouteDialog(false)} className="text-gray-500 hover:text-gray-700">✖</button>
-          </div>
-          
-          <form onSubmit={handleRoutePlan} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Starting Location (latitude, longitude)
-              </label>
-              <input
-                type="text"
-                value={startLocation}
-                onChange={(e) => setStartLocation(e.target.value)}
-                placeholder="e.g., 30.2672, -97.7431"
-                className="w-full p-2 border rounded"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Destination (latitude, longitude)
-              </label>
-              <input
-                type="text"
-                value={endLocation}
-                onChange={(e) => setEndLocation(e.target.value)}
-                placeholder="e.g., 29.7604, -95.3698,"
-                className="w-full p-2 border rounded"
-              />
-            </div>
-
-            <div className="flex justify-end space-x-2 pt-4">
-              <button
-                type="button"
-                onClick={() => setShowRouteDialog(false)}
-                className="px-4 py-2 border rounded hover:bg-gray-100"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-              >
-                Get Directions
-              </button>
-            </div>
-          </form>
-        </div>
+        <RouteForm setShowRouteDialog={setShowRouteDialog} />
       )}
+    </div>
 
       {/* Dark Mode Toggle
       <div className="absolute top-2 right-5 z-40">
