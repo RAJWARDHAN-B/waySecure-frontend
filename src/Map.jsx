@@ -255,7 +255,7 @@ const PoliceStationsPopup = ({ darkMode }) => (
   <form onSubmit={handleRoutePlan} className="space-y-4">
     <div>
       <label className={`block text-sm font-medium mb-1 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
-        Starting Location (longitude,latitude)
+        Starting Location (latitude, longitude)
       </label>
       <input
         type="text"
@@ -270,7 +270,7 @@ const PoliceStationsPopup = ({ darkMode }) => (
 
     <div>
       <label className={`block text-sm font-medium mb-1 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
-        Destination (longitude,latitude)
+        Destination (latitude, longitude)
       </label>
       <input
         type="text"
@@ -355,26 +355,26 @@ className={`absolute top-0 left-0 w-full p-2 flex items-center shadow-md z-50 tr
           <form onSubmit={handleRoutePlan} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Starting Location (longitude,latitude)
+                Starting Location (latitude, longitude)
               </label>
               <input
                 type="text"
                 value={startLocation}
                 onChange={(e) => setStartLocation(e.target.value)}
-                placeholder="e.g., -97.7431,30.2672"
+                placeholder="e.g., 30.2672, -97.7431"
                 className="w-full p-2 border rounded"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Destination (longitude,latitude)
+                Destination (latitude, longitude)
               </label>
               <input
                 type="text"
                 value={endLocation}
                 onChange={(e) => setEndLocation(e.target.value)}
-                placeholder="e.g., -95.3698,29.7604"
+                placeholder="e.g., 29.7604, -95.3698,"
                 className="w-full p-2 border rounded"
               />
             </div>
