@@ -44,14 +44,29 @@ const LandingPage = () => {
           <MissionPathAnimation />
         </>
       )}
+
+      {/* Navbar */}
       <div className="absolute top-2 left-100 right-0 flex items-center p-4 z-30 text-xl">
-        <div className={`flex space-x-10 ${isLightMode ? "text-gray-800" : "text-white"}`}>
-          <button className="relative font-semibold hover:underline hover:font-bold transition-all"
-           onClick={() => navigate("/how")}>How it Works</button>
-          <button className="relative font-semibold hover:underline hover:font-bold transition-all" 
-          onClick={() => navigate("/file")}>File a Report</button>
-          <button className="relative font-semibold hover:underline hover:font-bold transition-all" 
-          onClick={() => navigate("/about-us")}>About Us</button>
+        {/* Navigation Links on the Left */}
+        <div className="flex space-x-10">
+          <button
+            className="text-white font-medium"
+            onClick={() => navigate("/how-it-works")}
+          >
+            How it Works
+          </button>
+          <button
+            className="text-white font-medium"
+            onClick={() => navigate("/file")}
+          >
+            File a Report
+          </button>
+          <button
+            className="text-white font-medium"
+            onClick={() => navigate("/aboutus")}
+          >
+            About Us
+          </button>
         </div>
         <div className="flex-grow"></div>
         <div className="flex items-center">
@@ -99,16 +114,15 @@ const LandingPage = () => {
         >
           Sign Up
         </button>
-
-        <button
-          className={`bg-gradient-to-r p-1 rounded-full transition w-10 h-10 mb-6 flex items-center justify-center
-    ${isLightMode
-              ? "from-[#D8B4FE] to-[#C084FC] hover:from-[#C084FC] hover:to-[#A855F7]" // Light Mode Gradient
-              : "from-[#A855F7] to-[#7C3AED] hover:from-[#9333EA] hover:to-[#C084FC]" // Dark Mode Gradient
-            }`}
-            onClick={() => navigate("/profile")}
-        >
-          <img src={profileIcon} alt="profile" />
+        <button 
+         onClick={() => navigate("/profile")}
+        className="bg-purple-800 p-1 rounded-full hover:bg-purple-900 transition w-10 h-10 flex items-center justify-center">
+          {/* <img
+            src="waysecure\src\download.png"
+            alt="Profile"
+            className="w-full h-full object-cover rounded-full"
+          /> */}
+          <img src={profileIcon} alt='profile'/>
         </button>
 
       </div>
