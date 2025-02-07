@@ -10,9 +10,8 @@ const AboutUs = () => {
   return (
     <div className={`min-h-screen ${isLightMode ? 'bg-gray-900' : 'bg-white'} transition-all`}>
       {/* Navbar */}
-      <div className={`absolute top-2 left-105 right-0 flex items-center p-4 z-30 text-xl ${isLightMode ? 'text-white' : 'text-black'}`}>
-        <div className="flex space-x-10">
-          <a href="/how-it-works" className="font-medium">How it Works</a>
+      <div className={`absolute top-2 left-120 right-0 flex items-center p-4 z-30 text-xl ${isLightMode ? 'text-black' : 'text-white'}`}>
+        <div className="flex space-x-10"> <a href="/how-it-works" className="font-medium">How it Works</a>
           <a href="/file" className="font-medium">File a Report</a>
           <a href="/about-us" className="font-medium">About Us</a>
         </div>
@@ -45,10 +44,13 @@ const AboutUs = () => {
 
 
       {/* Main Content */}
-      <div className={`pt-32 pb-12 px-6 max-w-7xl mx-auto ${isLightMode ? 'text-white' : 'text-gray-900'}`}>
+
+      <div className={`pt-32 pb-12 px-6 max-w-7xl mx-auto ${isLightMode ? 'text-gray-900' : 'text-white'}`}>
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold">About Us</h1>
-          <p className="text-lg mt-4">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
+            About Us
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
             We help you navigate safely through your city with real-time data and recommendations.
           </p>
         </div>
@@ -56,7 +58,7 @@ const AboutUs = () => {
         {/* Cards Section */}
         <div className="grid md:grid-cols-3 gap-8">
           {/* Card 1 */}
-          <div className={`shadow-lg rounded-lg p-6 ${isLightMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} transition-all`}>
+          <div className="bg-white shadow-lg rounded-lg p-6 dark:bg-gray-800">
             <div className="flex items-center mb-4">
               <span className="text-blue-500 text-2xl">🗺️</span>
               <h2 className="text-xl font-semibold ml-3">Route Safety Mapping</h2>
@@ -65,7 +67,7 @@ const AboutUs = () => {
           </div>
 
           {/* Card 2 */}
-          <div className={`shadow-lg rounded-lg p-6 ${isLightMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} transition-all`}>
+          <div className="bg-white shadow-lg rounded-lg p-6 dark:bg-gray-800">
             <div className="flex items-center mb-4">
               <span className="text-green-500 text-2xl">📍</span>
               <h2 className="text-xl font-semibold ml-3">Safe Locations</h2>
@@ -74,7 +76,7 @@ const AboutUs = () => {
           </div>
 
           {/* Card 3 */}
-          <div className={`shadow-lg rounded-lg p-6 ${isLightMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} transition-all`}>
+          <div className="bg-white shadow-lg rounded-lg p-6 dark:bg-gray-800">
             <div className="flex items-center mb-4">
               <span className="text-red-500 text-2xl">🚨</span>
               <h2 className="text-xl font-semibold ml-3">Emergency Alerts</h2>
@@ -108,6 +110,46 @@ const AboutUs = () => {
               <img src={emerImage} alt="Alert Icon" className="w-24 h-24 object-cover rounded-lg mb-4" />
   
               <p>Emergency Alerts</p>
+            </div>
+          </div>
+        </div>
+
+        {/* New Content Section */}
+        <div className="mt-20 text-center">
+          <h2 className="text-2xl font-semibold mb-6">Our Mission</h2>
+          <p className="text-lg mb-10">
+            We aim to make urban navigation safer by using real-time data, integrating local community feedback, and constantly updating our map systems. Whether you're commuting, running errands, or out exploring, our goal is to keep you safe and informed.
+          </p>
+
+          <div className="flex justify-center space-x-8">
+            {/* Image 1 */}
+            <div className={`bg-white p-4 shadow-md rounded-lg ${isLightMode ? 'bg-white' : 'bg-gray-800'} transition-all`}>
+              <img
+                src="https://via.placeholder.com/200x200.png?text=Map+Icon"
+                alt="Map Icon"
+                className="w-24 h-24 object-cover rounded-lg mb-4"
+              />
+              <p className="text-gray-600 dark:text-gray-300">Maps & Routing</p>
+            </div>
+
+            {/* Image 2 */}
+            <div className={`bg-white p-4 shadow-md rounded-lg ${isLightMode ? 'bg-white' : 'bg-gray-800'} transition-all`}>
+              <img
+                src="https://via.placeholder.com/200x200.png?text=Location+Icon"
+                alt="Location Icon"
+                className="w-24 h-24 object-cover rounded-lg mb-4"
+              />
+              <p className="text-gray-600 dark:text-gray-300">Safe Locations</p>
+            </div>
+
+            {/* Image 3 */}
+            <div className={`bg-white p-4 shadow-md rounded-lg ${isLightMode ? 'bg-white' : 'bg-gray-800'} transition-all`}>
+              <img
+                src="https://via.placeholder.com/200x200.png?text=Alert+Icon"
+                alt="Alert Icon"
+                className="w-24 h-24 object-cover rounded-lg mb-4"
+              />
+              <p className="text-gray-600 dark:text-gray-300">Emergency Alerts</p>
             </div>
           </div>
         </div>
