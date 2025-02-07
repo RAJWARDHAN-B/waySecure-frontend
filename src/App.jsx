@@ -1,9 +1,9 @@
-  // import LoginPage from "./LoginPage";
+// import LoginPage from "./LoginPage";
 
 
-  // function App() {
-  //   return <LoginPage />;
-  // }
+// function App() {
+//   return <LoginPage />;
+// }
 
 // export default App;
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -15,7 +15,6 @@ import FileReport from "./FileReport";
 import Accounts from "./Accounts";
 import AboutUs from "./AboutUs";
 import BotpressChat from "./components/botpressChat";
-import HowItWorks from "./HowitWorks";
 
 function App() {
   return (
@@ -23,17 +22,14 @@ function App() {
       <BotpressChat />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/landingpage2" element={<LandingPage2 />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/map" element={<Map/>}/>
         <Route path="/file" element={<FileReport/>}/>
-        <Route path ="/profile" element={<Accounts/>}/>
-        <Route path="/about-us" element={<AboutUs/>}/>
-        <Route path="/how" element={<HowItWorks/>}/>
+        <Route path="/aboutus" element={<AboutUs/>}/>
       </Routes>
     </Router>
   );
 }
 
-export default App;
+  export default App;

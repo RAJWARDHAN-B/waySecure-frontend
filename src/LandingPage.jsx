@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import darkMapBg from './assets/darkmapbg.jpg';
-import lightMapBg from './lightmapbg.png';
-import profileIcon from './profileIcon.png';
+import lightMapBg from './lightmapbg.jpg';
+import profileIcon from './profileicon.png';
 import { motion } from 'framer-motion';
 
 const MissionPathAnimation = () => {
@@ -12,7 +12,7 @@ const MissionPathAnimation = () => {
         <motion.path
           d="M20,140 L80,100 L140,140 L200,100 L260,140 L280,60"
           fill="none"
-          stroke="#FFDD00"
+          stroke="#00BFFF"
           strokeWidth="2.5"
           strokeDasharray="10"
           initial={{ pathLength: 0 }}
@@ -46,7 +46,7 @@ const LandingPage = () => {
       )}
 
       {/* Navbar */}
-      <div className="absolute top-2 left-100 right-0 flex items-center p-4 z-30 text-xl">
+      <div className="absolute top-2 left-120 right-0 flex items-center p-4 z-30 text-xl">
         {/* Navigation Links on the Left */}
         <div className="flex space-x-10">
           <button
@@ -63,7 +63,7 @@ const LandingPage = () => {
           </button>
           <button
             className="text-white font-medium"
-            onClick={() => navigate("/aboutus")}
+            onClick={() => navigate("/about-us")}
           >
             About Us
           </button>
@@ -114,9 +114,7 @@ const LandingPage = () => {
         >
           Sign Up
         </button>
-        <button 
-         onClick={() => navigate("/profile")}
-        className="bg-purple-800 p-1 rounded-full hover:bg-purple-900 transition w-10 h-10 flex items-center justify-center">
+        <button className="bg-purple-800 p-1 rounded-full hover:bg-purple-900 transition w-10 h-10 flex items-center justify-center">
           {/* <img
             src="waysecure\src\download.png"
             alt="Profile"

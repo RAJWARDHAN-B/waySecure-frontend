@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-import darkMapBg from './assets/darkmapbg.jpeg'; // Import the image
-
 import darkMapBg from './assets/darkmapbg.jpg'; // Import the image
-
 import profileIcon from './profileIcon.png';
 import { motion } from 'framer-motion'; // Import motion for the animation
 
