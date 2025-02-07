@@ -480,13 +480,15 @@ ${darkMode ? "bg-gray-900 text-gray-200" : "bg-white text-gray-900"}`}>
     {/* Bottom Right Buttons */}
 <div className="absolute bottom-7 right-5 flex flex-col gap-4 z-20">
 {/* HELP Button */}
-<button
-  className={`px-7 py-5 shadow-md rounded-lg border-2 w-full animate-pulse z-20 ${
-    darkMode ? "bg-red-600 border-red-800 text-white" : "bg-red-500 border-red-700 text-white"
-  }`}
->
-  ⚠ <span className="font-bold">HELP</span>
-</button>
+  <button
+    className={`relative w-0 h-0 border-l-[40px] border-r-[40px] border-b-[70px] border-l-transparent border-r-transparent 
+    ${!darkMode ? "border-b-red-600 text-white" : "border-b-[#FFFF00] text-black"} animate-pulse z-20`}
+  >
+    <span className="absolute top-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl">
+      <b>!</b>
+    </span>
+  </button>
+
 
 <div className="flex flex-col px-8 py-2 gap-2 z-20">
   {/* Map Button */}
