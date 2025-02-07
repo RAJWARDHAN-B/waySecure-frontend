@@ -64,7 +64,7 @@ const LandingPage = () => {
       )}
 
       {/* Navbar */}
-      <div className="absolute top-2 left-100 right-0 flex items-center p-4 z-30 text-xl">
+      <div className="absolute top-2 left-120 right-0 flex items-center p-4 z-30 text-xl">
         {/* Navigation Links on the Left */}
         <div className="flex space-x-10">
           <button
